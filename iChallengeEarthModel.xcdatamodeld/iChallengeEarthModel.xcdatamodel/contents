@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="10K549" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ActivityData" representedClassName="ActivityData" syncable="YES">
+        <attribute name="accuracy" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="dateTime" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="toRemove" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="velocity" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="attemptHashs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AttemptHash" inverseName="activityDatas" inverseEntity="AttemptHash" syncable="YES"/>
+    </entity>
+    <entity name="AttemptHash" representedClassName="AttemptHash" syncable="YES">
+        <attribute name="attemptHash" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="challengeId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="activityDatas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActivityData" inverseName="attemptHashs" inverseEntity="ActivityData"/>
+    </entity>
+    <elements>
+        <element name="ActivityData" positionX="-236" positionY="-189" width="128" height="195"/>
+        <element name="AttemptHash" positionX="160" positionY="192" width="128" height="90"/>
+    </elements>
+</model>
