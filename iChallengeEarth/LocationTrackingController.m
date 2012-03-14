@@ -83,10 +83,10 @@
 {
     ActivityData *newActivity = [self createNewActivityData:newLocation];
     
-    int r = (arc4random() % 3) + 2;
-    NSLog(@"r is: %d",r);
-    if(r == 3)
-//    if([[RKClient sharedClient].reachabilityObserver isNetworkReachable])
+//    int r = (arc4random() % 3) + 2;
+//    NSLog(@"r is: %d",r);
+//    if(r == 3)
+    if([[RKClient sharedClient].reachabilityObserver isNetworkReachable])
     {
         [self postCachedAndTheNewActivityToServer];
         [callbackHandler.challengeView positionUpdateWithConnectivity:true];

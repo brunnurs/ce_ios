@@ -27,7 +27,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -42,7 +41,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(refreshMe:) userInfo:nil repeats:YES];
+    //TODO Decide if we should use the timer... and if so, with a button to enable/disable it!
+//	self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(refreshPositionOnMap:) userInfo:nil repeats:YES];
 }
 	
 #pragma mark - View lifecycle
@@ -154,7 +154,7 @@
 	}
 }
 
--(void)refreshMe:(NSTimer *)timer
+-(void)refreshPositionOnMap:(NSTimer*)timer
 {
 	//Zoom and Center Map if auto-follow is on
 
@@ -173,8 +173,7 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
     
-    
-    
+    [self refreshPositionOnMap:nil];
     self.challenges = [[ChallengeList alloc]init];
     self.challenges.items = objects;
     [self.challenges loadChallengeImages];

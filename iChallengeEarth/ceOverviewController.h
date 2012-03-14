@@ -23,5 +23,6 @@
 @property (nonatomic,strong) ChallengeList *challenges;
 
 -(void)showChallengesAsPins;
+-(void)refreshPositionOnMap:(NSTimer*)timer;
 
 @end
