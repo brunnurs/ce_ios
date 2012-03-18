@@ -50,7 +50,7 @@
 
 +(RKManagedObjectMapping*)getMappingForREST
 {
-    RKManagedObjectMapping* objectMapping = [RKManagedObjectMapping mappingForClass:[ActivityData class]];
+    RKManagedObjectMapping* objectMapping = [RKManagedObjectMapping mappingForClass:[ActivityData class] inManagedObjectStore:[RKObjectManager sharedManager].objectStore];
     [objectMapping mapKeyPath:@"accuracy" toAttribute:@"accuracy"];
     [objectMapping mapKeyPath:@"altitude" toAttribute:@"altitude"];
     [objectMapping mapKeyPath:@"dateTime" toAttribute:@"dateTime"];

@@ -14,8 +14,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "408"
          endingLineNumber = "408"
-         landmarkName = "@implementation RKRequest"
-         landmarkType = "3">
+         landmarkName = "-HTTPMethod"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -28,7 +28,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "362"
          endingLineNumber = "362"
-         landmarkName = "-send"
+         landmarkName = "-addHeadersToRequest"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -44,6 +44,20 @@
          endingLineNumber = "17"
          landmarkName = "@implementation ceChallengeStatusViewController"
          landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "RestKit/Code/ObjectMapping/RKObjectManager.m"
+         timestampString = "353768865.20479"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "71"
+         endingLineNumber = "71"
+         landmarkName = "-initWithBaseURL:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

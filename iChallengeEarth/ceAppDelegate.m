@@ -8,6 +8,7 @@
 
 #import "ceAppDelegate.h"
 #import <RestKit/RestKit.h>
+#import <RestKit/CoreData.h>
 #import "Challenge.h"
 #import "ActivityData.h"
 #import "Progress.h"
@@ -21,7 +22,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // initiate base-url
-    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:BASEURL_REST];
+    NSLog(@"BaseUrl: %@",BASEURL_REST);
+    RKObjectManager* manager = [RKObjectManager managerWithBaseURLString:BASEURL_REST];
+    
+    // Enable automatic network activity indicator management
+    manager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
+
+    
+    
     // make Restkit working with core data to save objects, if we have no connection.
     manager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"iChallengeEarth.sqlite"];
  

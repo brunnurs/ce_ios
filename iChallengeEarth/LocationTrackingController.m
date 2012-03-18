@@ -170,7 +170,7 @@
     RKObjectLoader* loader = [[RKObjectManager sharedManager] objectLoaderForObject:activityData method:RKRequestMethodPOST delegate:callbackHandler];
     loader.targetObject = activityData;
 	loader.objectMapping = [ActivityData getMappingForREST];
-    RKResponse* response = [loader sendSynchronously];
+    [loader sendSynchronously];
     
     NSLog(@"Sended ActivityData synchron to server: %@.",activityData);
 }

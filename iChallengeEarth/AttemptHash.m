@@ -43,7 +43,7 @@
 
 +(RKManagedObjectMapping*)getMappingForREST
 {
-    RKManagedObjectMapping* objectMapping = [RKManagedObjectMapping mappingForClass:[AttemptHash class]];
+    RKManagedObjectMapping* objectMapping = [RKManagedObjectMapping mappingForClass:[AttemptHash class] inManagedObjectStore:[RKObjectManager sharedManager].objectStore];
     [objectMapping mapKeyPath:@"attemptHash" toAttribute:@"attemptHash"];
     [objectMapping mapKeyPath:@"challengeId" toAttribute:@"challengeId"];
     
