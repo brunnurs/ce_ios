@@ -82,7 +82,8 @@
     if(self.trackingController != nil)
     {
         self.trackingController.isInBackgroundMode = false;
-        NSLog(@"Change to foreground-mode and notify LocationTrackingController.");
+        [trackingController askSpontaneousForProgress];
+        NSLog(@"Change to foreground-mode and notify LocationTrackingController. Ask spontaneous for current Progress");
     }
 }
 

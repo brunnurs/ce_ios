@@ -39,6 +39,7 @@
 -(void)startTracking;
 -(void)stopTracking;
 -(void)removeCurrentChallengeAttempt;
+-(void)askSpontaneousForProgress;
 
 
 //private methods

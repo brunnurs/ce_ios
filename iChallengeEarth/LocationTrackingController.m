@@ -34,7 +34,7 @@
     self.locationManager = [[CLLocationManager alloc] init];
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.delegate = self;
-    locationManager.distanceFilter = 50.0f;
+    locationManager.distanceFilter = 10.0f;
     
     self.isInBackgroundMode = false;
     
@@ -78,6 +78,12 @@
 {
 	locationManager.distanceFilter = distance;
 }
+
+-(void)askSpontaneousForProgress
+{
+    [callbackHandler askForCurrentProgress];
+}
+
 
 -(void)handlePositionUpdate:(CLLocation*)newLocation
 {
@@ -167,10 +173,17 @@
 
 -(void)postActivityDataSynchronousToServer:(ActivityData*)activityData
 {
-    RKObjectLoader* loader = [[RKObjectManager sharedManager] objectLoaderForObject:activityData method:RKRequestMethodPOST delegate:callbackHandler];
-    loader.targetObject = activityData;
-	loader.objectMapping = [ActivityData getMappingForREST];
-    [loader sendSynchronously];
+    //IMPORTANT: if we send data triggered by a background-location-event, we have to use a synchronus-send, because the 
+    //queue mechanism doesn't work there (the reason can be found in some of ursin's links). Despite of that, we can not use the
+    //main-thread for this work, because when the network-call last too long, the app crashs (even if we don't block the GUI).
+    //That's why we have to use here another Thread, where we make the synchronus call.
+    //Rest-Kit normaly doesn't allow this, thats why we have to remove the Assert on RKObjectLoader.didFinishLoad.
+    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        RKObjectLoader* loader = [[RKObjectManager sharedManager] objectLoaderForObject:activityData method:RKRequestMethodPOST delegate:callbackHandler];
+        loader.targetObject = activityData;
+        loader.objectMapping = [ActivityData getMappingForREST];
+        [loader sendSynchronously]; 
+    });
     
     NSLog(@"Sended ActivityData synchron to server: %@.",activityData);
 }
