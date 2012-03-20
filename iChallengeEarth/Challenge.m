@@ -41,7 +41,7 @@
 {
     RKObjectRouter *router = [RKObjectManager sharedManager].router;
     
-    [router routeClass:[Challenge class] toResourcePath:@"/challenge" forMethod:RKRequestMethodGET];
+    [router routeClass:[Challenge class] toResourcePath:@"/challenge/:challengeId" forMethod:RKRequestMethodGET];
 }
 
 @end

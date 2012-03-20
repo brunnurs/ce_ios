@@ -23,7 +23,7 @@
 @synthesize currentChallengeAttempt;
 @synthesize isInBackgroundMode;
 
-- (id)initWithChallenge:(Challenge *)chall
+- (id)init
 {
 	self = [super init];
 	if(!self)
@@ -34,17 +34,24 @@
     self.locationManager = [[CLLocationManager alloc] init];
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.delegate = self;
-    locationManager.distanceFilter = 10.0f;
+    locationManager.distanceFilter = 50.0f;
     
     self.isInBackgroundMode = false;
-    
-    self.currentChallengeAttempt = [[ChallengeAttempt alloc]initWithNewHashAndChallenge:chall];
-    
-    //register myself on the app-delegate to detect background mode
-    ceAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    delegate.trackingController = self;
-    
+
 	return self;
+}
+
+-(void)initializeNewChallengeAttemptWithChallenge:(Challenge*)challenge
+{
+    ChallengeAttempt *newChallengeAttempt = [ChallengeAttempt object];
+    [newChallengeAttempt initializeNewHashWithChallenge:challenge];
+    self.currentChallengeAttempt = newChallengeAttempt;
+}
+
+-(void)initializeChallengeAttempt:(ChallengeAttempt*)challengeAttempt
+{
+    self.currentChallengeAttempt = challengeAttempt;
+
 }
 
 -(void)setChallengeView:(id <TrackingControllerDelegate>)challengeView
@@ -79,9 +86,17 @@
 	locationManager.distanceFilter = distance;
 }
 
--(void)askSpontaneousForProgress
+-(BOOL)askSpontaneousForProgress
 {
-    [callbackHandler askForCurrentProgress];
+    if(self.currentChallengeAttempt != nil)
+    {
+        [callbackHandler askForCurrentProgress];
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 
@@ -227,8 +242,8 @@
 -(void)removeCurrentChallengeAttempt
 {
     NSError* error;
-    [currentChallengeAttempt.attemptHash.managedObjectContext deleteObject:currentChallengeAttempt.attemptHash];
-    bool hasSaved = [currentChallengeAttempt.attemptHash.managedObjectContext save:&error];
+    [currentChallengeAttempt.managedObjectContext deleteObject:currentChallengeAttempt];
+    bool hasSaved = [currentChallengeAttempt.managedObjectContext save:&error];
     NSLog(@"Removed curentChallengeAttempt with AttemptHash. Save worked? (%@)",(hasSaved) ? @"YES" : @"NO");
     
     self.currentChallengeAttempt = nil;

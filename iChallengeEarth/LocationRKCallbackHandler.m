@@ -85,7 +85,7 @@
 //    for (NSString* key in [request additionalHTTPHeaders]) {
 //        NSLog(@"Header: %@",[request.additionalHTTPHeaders objectForKey:key]);
 //    }
-	NSLog(@"empfangen: %@",[response bodyAsString]);
+//	NSLog(@"empfangen: %@",[response bodyAsString]);
 }
 
 

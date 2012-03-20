@@ -21,18 +21,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self setupRestKit];
+    
+    self.trackingController = [[LocationTrackingController alloc]init];
+    
+    return YES;
+}
+
+
+-(void)setupRestKit
+{
     // initiate base-url
     NSLog(@"BaseUrl: %@",BASEURL_REST);
     RKObjectManager* manager = [RKObjectManager managerWithBaseURLString:BASEURL_REST];
     
     // Enable automatic network activity indicator management
     manager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
-
-    
     
     // make Restkit working with core data to save objects, if we have no connection.
     manager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:@"iChallengeEarth.sqlite"];
- 
+    
     //Set serialize-mime to mime-type json (standard would be formURLEncoded!)
     [RKObjectManager sharedManager].serializationMIMEType = RKMIMETypeJSON;
     
@@ -41,15 +49,14 @@
     [ActivityData setUpRoutes];
     [Progress setUpRoutes];
     
-
+    
     //load all serializing-mappings(important to understand, not the same as deserializing-mappings!)for the Restkit MappingProvider
     RKObjectMapping* activityDataSerializationMapping = [[ActivityData getMappingForREST] inverseMapping];    
     [[RKObjectManager sharedManager].mappingProvider setSerializationMapping:activityDataSerializationMapping forClass:[ActivityData class]];
     RKObjectMapping* attemptHashSerializationMapping = [[AttemptHash getMappingForREST] inverseMapping];    
     [[RKObjectManager sharedManager].mappingProvider setSerializationMapping:attemptHashSerializationMapping forClass:[AttemptHash class]];
     
-    
-    return YES;
+
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -82,8 +89,14 @@
     if(self.trackingController != nil)
     {
         self.trackingController.isInBackgroundMode = false;
-        [trackingController askSpontaneousForProgress];
-        NSLog(@"Change to foreground-mode and notify LocationTrackingController. Ask spontaneous for current Progress");
+        if([trackingController askSpontaneousForProgress])
+        {
+            NSLog(@"Change to foreground-mode and notify LocationTrackingController. Ask spontaneous for current Progress");
+        }
+        else
+        {
+            NSLog(@"Change to foreground-mode and notify LocationTrackingController. No ChallengeAttempt to ask for Progress");
+        }
     }
 }
 

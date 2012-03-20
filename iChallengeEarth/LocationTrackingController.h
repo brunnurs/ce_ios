@@ -35,11 +35,12 @@
 @property bool isInBackgroundMode;
 
 
--(id)initWithChallenge:(Challenge *)chall;
+-(void)initializeNewChallengeAttemptWithChallenge:(Challenge*)challenge;
+-(void)initializeChallengeAttempt:(ChallengeAttempt*)challengeAttempt;
 -(void)startTracking;
 -(void)stopTracking;
 -(void)removeCurrentChallengeAttempt;
--(void)askSpontaneousForProgress;
+-(BOOL)askSpontaneousForProgress;
 
 
 //private methods

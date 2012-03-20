@@ -12,30 +12,26 @@
 
 
 @implementation ChallengeAttempt
-@synthesize attemptHash;
-@synthesize startDate;
+@dynamic attemptHash;
+@dynamic startDate;
 @synthesize challenge;
 
 
--(id)initWithNewHashAndChallenge:(Challenge *)chall;
+
+-(void)initializeNewHashWithChallenge:(Challenge *)chall
 {
-    self = [super init];
-	if(!self)
-		return nil;
-	
     self.challenge = chall;
     
     self.attemptHash = [AttemptHash object];
     self.attemptHash.challengeId = chall.challengeId;
     
     [self.attemptHash createNewAttemptHash];
-  
+    
     NSError* error;
-    BOOL hasSaved = [self.attemptHash.managedObjectContext save:&error];
-    NSLog(@"Created and saved new Attempt Hash. %@ has saved: (%@)",self.attemptHash,(hasSaved) ? @"YES" : @"NO");
-
-	return self;    
+    BOOL hasSaved = [self.managedObjectContext save:&error];
+    NSLog(@"Created and saved new ChallengeAttempt with new Attempt Hash. %@ has saved: (%@)",self.attemptHash,(hasSaved) ? @"YES" : @"NO");
 }
+
 
 
 -(long)getElapsedTime

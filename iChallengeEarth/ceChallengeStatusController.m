@@ -23,8 +23,6 @@
     [super viewDidLoad];	
 	[self initializeView];
    
-    //TODO decide, depending on the challenge, what distance-filter should be choosen for tracking
-    trackingController.distanceFilter = 100.0f;
     self.trackingController.challengeView = self;
     [trackingController startTracking];
 }

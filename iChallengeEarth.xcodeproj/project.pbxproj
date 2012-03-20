@@ -18,6 +18,12 @@
 		C31A744A14E32660009219A6 /* ChallengeAttempt.m in Sources */ = {isa = PBXBuildFile; fileRef = C31A744814E3265F009219A6 /* ChallengeAttempt.m */; };
 		C31A744D14E83496009219A6 /* iChallengeEarthModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C31A744B14E83496009219A6 /* iChallengeEarthModel.xcdatamodeld */; };
 		C31A744E14E83496009219A6 /* iChallengeEarthModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C31A744B14E83496009219A6 /* iChallengeEarthModel.xcdatamodeld */; };
+		C31C14771518AD6B00C7B9AC /* RunningChallengeAttemptHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C31C14761518AD6B00C7B9AC /* RunningChallengeAttemptHandler.m */; };
+		C31C14781518AD6B00C7B9AC /* RunningChallengeAttemptHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C31C14761518AD6B00C7B9AC /* RunningChallengeAttemptHandler.m */; };
+		C31C147B1518C11100C7B9AC /* ceRunningChallengesController.m in Sources */ = {isa = PBXBuildFile; fileRef = C31C147A1518C11100C7B9AC /* ceRunningChallengesController.m */; };
+		C31C147C1518C11100C7B9AC /* ceRunningChallengesController.m in Sources */ = {isa = PBXBuildFile; fileRef = C31C147A1518C11100C7B9AC /* ceRunningChallengesController.m */; };
+		C31C14831518FB3A00C7B9AC /* ChallengeAttemptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31C14821518FB3A00C7B9AC /* ChallengeAttemptCell.m */; };
+		C31C14841518FB3A00C7B9AC /* ChallengeAttemptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31C14821518FB3A00C7B9AC /* ChallengeAttemptCell.m */; };
 		C3481B8814A7C34E000552F5 /* ceOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3481B8614A7C34E000552F5 /* ceOverviewController.m */; };
 		C3481B8914A7C34E000552F5 /* ceOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3481B8614A7C34E000552F5 /* ceOverviewController.m */; };
 		C34D07B41516641D004723B8 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C34D07AA151663AE004723B8 /* libRestKit.a */; };
@@ -137,6 +143,12 @@
 		C31A744714E3265F009219A6 /* ChallengeAttempt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeAttempt.h; sourceTree = "<group>"; };
 		C31A744814E3265F009219A6 /* ChallengeAttempt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeAttempt.m; sourceTree = "<group>"; };
 		C31A744C14E83496009219A6 /* iChallengeEarthModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iChallengeEarthModel.xcdatamodel; sourceTree = "<group>"; };
+		C31C14751518AD6B00C7B9AC /* RunningChallengeAttemptHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningChallengeAttemptHandler.h; sourceTree = "<group>"; };
+		C31C14761518AD6B00C7B9AC /* RunningChallengeAttemptHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningChallengeAttemptHandler.m; sourceTree = "<group>"; };
+		C31C14791518C11100C7B9AC /* ceRunningChallengesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ceRunningChallengesController.h; sourceTree = "<group>"; };
+		C31C147A1518C11100C7B9AC /* ceRunningChallengesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ceRunningChallengesController.m; sourceTree = "<group>"; };
+		C31C14811518FB3A00C7B9AC /* ChallengeAttemptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeAttemptCell.h; sourceTree = "<group>"; };
+		C31C14821518FB3A00C7B9AC /* ChallengeAttemptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeAttemptCell.m; sourceTree = "<group>"; };
 		C3481B8514A7C34E000552F5 /* ceOverviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ceOverviewController.h; sourceTree = "<group>"; };
 		C3481B8614A7C34E000552F5 /* ceOverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ceOverviewController.m; sourceTree = "<group>"; };
 		C34D079E151663AD004723B8 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
@@ -254,17 +266,26 @@
 			name = Database;
 			sourceTree = "<group>";
 		};
+		C31C14741518AD0500C7B9AC /* SpecialController */ = {
+			isa = PBXGroup;
+			children = (
+				C31C14751518AD6B00C7B9AC /* RunningChallengeAttemptHandler.h */,
+				C31C14761518AD6B00C7B9AC /* RunningChallengeAttemptHandler.m */,
+			);
+			name = SpecialController;
+			sourceTree = "<group>";
+		};
 		C3481B7D14A7C123000552F5 /* GUIController */ = {
 			isa = PBXGroup;
 			children = (
 				C3481B8514A7C34E000552F5 /* ceOverviewController.h */,
 				C3481B8614A7C34E000552F5 /* ceOverviewController.m */,
-				C36DF3AA14AE0A5C006ED1F7 /* AdressAnnotation.h */,
-				C36DF3AB14AE0A5C006ED1F7 /* AdressAnnotation.m */,
 				C3CEF57A14B0C6FE006C84A1 /* ceChallengeDetailController.h */,
 				C3CEF57B14B0C6FE006C84A1 /* ceChallengeDetailController.m */,
 				C3CEF57F14B11290006C84A1 /* ceChallengeStatusController.h */,
 				C3CEF58014B11290006C84A1 /* ceChallengeStatusController.m */,
+				C31C14791518C11100C7B9AC /* ceRunningChallengesController.h */,
+				C31C147A1518C11100C7B9AC /* ceRunningChallengesController.m */,
 			);
 			name = GUIController;
 			sourceTree = "<group>";
@@ -352,6 +373,7 @@
 		C370FD2714A7AAFC00E64D41 /* iChallengeEarth */ = {
 			isa = PBXGroup;
 			children = (
+				C31C14741518AD0500C7B9AC /* SpecialController */,
 				C31A744F14E83522009219A6 /* Database */,
 				C306D56A14BB5EEA009CB341 /* Location */,
 				C3CEF58314B116A2006C84A1 /* Utilities */,
@@ -431,8 +453,12 @@
 		C3E2FF6014A8B83F0071D2CE /* GUIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				C36DF3AA14AE0A5C006ED1F7 /* AdressAnnotation.h */,
+				C36DF3AB14AE0A5C006ED1F7 /* AdressAnnotation.m */,
 				C3E2FF6214A8B8880071D2CE /* ChallengeCell.h */,
 				C3E2FF6314A8B8880071D2CE /* ChallengeCell.m */,
+				C31C14811518FB3A00C7B9AC /* ChallengeAttemptCell.h */,
+				C31C14821518FB3A00C7B9AC /* ChallengeAttemptCell.m */,
 			);
 			name = GUIComponents;
 			sourceTree = "<group>";
@@ -616,6 +642,9 @@
 				C38BC55414EC547A00D2A1A5 /* AttemptHash.m in Sources */,
 				C351095414ED31480029F594 /* LocationRKCallbackHandler.m in Sources */,
 				C305DBEE150AA241005080EC /* Category.m in Sources */,
+				C31C14771518AD6B00C7B9AC /* RunningChallengeAttemptHandler.m in Sources */,
+				C31C147B1518C11100C7B9AC /* ceRunningChallengesController.m in Sources */,
+				C31C14831518FB3A00C7B9AC /* ChallengeAttemptCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +669,9 @@
 				C31A744A14E32660009219A6 /* ChallengeAttempt.m in Sources */,
 				C31A744E14E83496009219A6 /* iChallengeEarthModel.xcdatamodeld in Sources */,
 				C305DBEF150AA241005080EC /* Category.m in Sources */,
+				C31C14781518AD6B00C7B9AC /* RunningChallengeAttemptHandler.m in Sources */,
+				C31C147C1518C11100C7B9AC /* ceRunningChallengesController.m in Sources */,
+				C31C14841518FB3A00C7B9AC /* ChallengeAttemptCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
