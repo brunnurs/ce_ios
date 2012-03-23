@@ -13,8 +13,10 @@
 {
     IBOutlet UITableView *runningChallengesTable;
     RunningChallengeAttemptHandler *runningChallengeHandler;
+    NSDateFormatter *dateFormatter;
 }
 
 @property (strong,nonatomic) RunningChallengeAttemptHandler *runningChallengeHandler;
+@property (strong,nonatomic) NSDateFormatter *dateFormatter;
 
 @end

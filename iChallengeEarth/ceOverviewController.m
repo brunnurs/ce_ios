@@ -22,14 +22,8 @@
 @implementation ceOverviewController
 @synthesize challenges;
 @synthesize refreshTimer;
+@synthesize timerTicks;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -42,7 +36,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     //TODO Decide if we should use the timer... and if so, with a button to enable/disable it!
-//	self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(refreshPositionOnMap:) userInfo:nil repeats:YES];
+    self.timerTicks = 0;
+	self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(refreshPositionOnMap:) userInfo:nil repeats:YES];
 }
 	
 #pragma mark - View lifecycle
@@ -156,11 +151,19 @@
 
 -(void)refreshPositionOnMap:(NSTimer*)timer
 {
+    if(timerTicks >= 3)
+    {
+        [self.refreshTimer invalidate];
+    }
+    else
+    {
+        timerTicks++;
+    }
+    
 	//Zoom and Center Map if auto-follow is on
-
     MKCoordinateRegion region;
 		
-	region.center = mapView.userLocation.location.coordinate; 
+	region.center = mapView.userLocation.location.coordinate;
 		
 	region.span.latitudeDelta = .01;
 	region.span.longitudeDelta = .01;

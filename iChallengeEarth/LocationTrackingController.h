@@ -12,18 +12,21 @@
 #import "TrackingControllerDelegate.h"
 
 
+
 @class Progress;
 @class Challenge;
 @class ChallengeAttempt;
 @class TrackingControllerDelegate;
 @class LocationRKCallbackHandler;
 @class ActivityData;
+@class SendingStrategyFactory;
 
 @interface LocationTrackingController : NSObject<CLLocationManagerDelegate>
 {
     CLLocationManager *locationManager;
     LocationRKCallbackHandler *callbackHandler;
     ChallengeAttempt *currentChallengeAttempt;
+    SendingStrategyFactory *sendingStrategyFactory;
     bool isInBackgroundMode;
 }
 
@@ -31,6 +34,7 @@
 @property (nonatomic,strong) CLLocationManager *locationManager;
 @property (nonatomic,strong) ChallengeAttempt *currentChallengeAttempt;
 @property (nonatomic,strong) id <TrackingControllerDelegate> challengeView;
+@property (nonatomic,strong) SendingStrategyFactory *sendingStrategyFactory;
 @property float distanceFilter;
 @property bool isInBackgroundMode;
 

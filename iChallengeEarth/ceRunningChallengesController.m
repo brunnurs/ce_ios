@@ -19,10 +19,14 @@
 
 @implementation ceRunningChallengesController
 @synthesize runningChallengeHandler;
-
+@synthesize dateFormatter;
 
 -(void)viewDidLoad
-{
+{   
+    
+    self.dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"MMM dd, yyyy HH:mm"];
+    
     self.runningChallengeHandler = [[RunningChallengeAttemptHandler alloc]init];
     runningChallengeHandler.delegateToInform = self;
 }
@@ -58,13 +62,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {    
+    
 	ChallengeAttempt *challengeAttempt = [runningChallengeHandler.runningChallengeAttempts objectAtIndex:indexPath.row];
     Challenge *currentChallenge = challengeAttempt.challenge;
 	
 	ChallengeAttemptCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChallengeAttemptCell"];
 	
     cell.challengeImage.image = currentChallenge.achievmentDesc.image.realImage;
-	cell.attemptStartTime.text = challengeAttempt.startDate.description;
+	cell.attemptStartTime.text = [self.dateFormatter stringFromDate:challengeAttempt.startDate];
 	cell.challengeTitle.text = currentChallenge.title;
 	cell.challengeCategorie.text = currentChallenge.category.title;
     

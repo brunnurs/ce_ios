@@ -13,6 +13,9 @@
 #import "ChallengeAttempt.h"
 #import "LocationRKCallbackHandler.h"
 #import "ceAppDelegate.h"
+#import "SendingStrategyFactory.h"
+#import "SendingStrategy.h"
+
 #include <stdlib.h>
 
 
@@ -22,6 +25,7 @@
 @synthesize callbackHandler;
 @synthesize currentChallengeAttempt;
 @synthesize isInBackgroundMode;
+@synthesize sendingStrategyFactory;
 
 - (id)init
 {
@@ -29,6 +33,7 @@
 	if(!self)
 		return nil;
     
+    self.sendingStrategyFactory = [[SendingStrategyFactory alloc]init];
     self.callbackHandler = [[LocationRKCallbackHandler alloc] initWithTrackingController:self];
     self.callbackHandler.askForProgressAfterActivitySent = YES;
     self.locationManager = [[CLLocationManager alloc] init];
@@ -102,22 +107,9 @@
 
 -(void)handlePositionUpdate:(CLLocation*)newLocation
 {
-    ActivityData *newActivity = [self createNewActivityData:newLocation];
-    
-//    int r = (arc4random() % 3) + 2;
-//    NSLog(@"r is: %d",r);
-//    if(r == 3)
-    if([[RKClient sharedClient].reachabilityObserver isNetworkReachable])
-    {
-        [self postCachedAndTheNewActivityToServer];
-        [callbackHandler.challengeView positionUpdateWithConnectivity:true];
-    }
-    else
-    {
-        [self saveToDatabase:newActivity];
-        [callbackHandler.challengeView positionUpdateWithConnectivity:false];
-    }
+    id<SendingStrategy> sendingStrategy = [sendingStrategyFactory getSendingStrategyByBackgroundForeground:isInBackgroundMode withCallbackHandler:callbackHandler];
 
+    [sendingStrategy sendToServer:newLocation forChallengeAttempt:currentChallengeAttempt];
 }
 
 -(void)removeOldActivityDataFromDatabase
