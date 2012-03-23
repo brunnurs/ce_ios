@@ -29,4 +29,6 @@ static long USERID = 10458;
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) LocationTrackingController *trackingController;
 
+-(void)setupRestKit;
+
 @end

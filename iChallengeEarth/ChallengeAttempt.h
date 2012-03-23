@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @class AttemptHash;
 @class Challenge;
 
-@interface ChallengeAttempt : NSObject
+@interface ChallengeAttempt : NSManagedObject
 {
     AttemptHash *attemptHash;
     NSDate *startDate;
@@ -23,7 +24,7 @@
 @property (nonatomic,strong) NSDate *startDate;
 @property (nonatomic,strong) Challenge *challenge;
 
--(id)initWithNewHashAndChallenge:(Challenge *)chall;
+-(void)initializeNewHashWithChallenge:(Challenge *)chall;
 -(long)getElapsedTime;
 
 @end

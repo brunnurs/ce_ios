@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hz7-4Y-e5H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Kr0-H1-MN1">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -10,11 +10,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvz-op-clS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="overview" id="VAp-u8-j1n" customClass="ceOverviewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ehh-PL-PgR">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="I95-Ce-Q5k">
-                                <rect key="frame" x="0.0" y="254" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="206" width="320" height="169"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -72,7 +72,7 @@
                                 </connections>
                             </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="Lev-jr-PRe">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="256"/>
+                                <rect key="frame" x="0.0" y="-49" width="320" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                         </subviews>
@@ -87,12 +87,99 @@
             </objects>
             <point key="canvasLocation" x="77" y="-358"/>
         </scene>
+        <scene sceneID="JK5-M8-8D6">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FDK-Bj-75p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="kqx-TQ-jzo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="j4g-Ma-uSf"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="106-Vp-vSf">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hn7-4E-1nD" kind="relationship" relationship="rootViewController" id="xrT-V9-xBk"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-413" y="391"/>
+        </scene>
+        <scene sceneID="kyB-uP-VW5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5TF-RI-1Pg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="hn7-4E-1nD" customClass="ceRunningChallengesController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dRG-Xa-epy">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" id="2vp-3v-7gD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ChallengeAttemptCell" id="dZf-os-8Rh" customClass="ChallengeAttemptCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="59"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="58"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Titel" lineBreakMode="tailTruncation" minimumFontSize="10" id="43q-4k-fiK">
+                                                    <rect key="frame" x="74" y="4" width="250" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Categorie" lineBreakMode="tailTruncation" minimumFontSize="10" id="5gr-LP-KC4">
+                                                    <rect key="frame" x="72" y="28" width="105" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="fPn-9w-6Di">
+                                                    <rect key="frame" x="20" y="4" width="46" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Jan 03, 2011 13:44" lineBreakMode="tailTruncation" minimumFontSize="10" id="qFC-Kr-eDy">
+                                                    <rect key="frame" x="184" y="28" width="116" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="attemptStartTime" destination="qFC-Kr-eDy" id="pF5-3q-AiH"/>
+                                            <outlet property="challengeCategorie" destination="5gr-LP-KC4" id="Y4n-Gb-Gqj"/>
+                                            <outlet property="challengeImage" destination="fPn-9w-6Di" id="YIz-Op-0qr"/>
+                                            <outlet property="challengeTitle" destination="43q-4k-fiK" id="lvw-7D-m51"/>
+                                            <segue destination="Wrq-qR-EAR" kind="push" identifier="resumeChallenge" id="8Tp-mJ-7cf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hn7-4E-1nD" id="Wtv-Qr-ceH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Running Challenges" id="fXI-vP-DZd"/>
+                    <connections>
+                        <outlet property="runningChallengesTable" destination="2vp-3v-7gD" id="aiZ-7h-oBq"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="433" y="391"/>
+        </scene>
         <scene sceneID="NR8-bO-fKG">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAQ-2w-yVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="details" id="PUv-pj-VUE" customClass="ceChallengeDetailController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Csj-aR-bB9">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Zürichseerundfahrt" lineBreakMode="tailTruncation" minimumFontSize="10" id="e52-8d-pnk">
@@ -126,25 +213,25 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="greenled.png" id="kCX-Lg-Y0r">
-                                <rect key="frame" x="93" y="340" width="30" height="30"/>
+                                <rect key="frame" x="93" y="325" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Schwierigkeit:" lineBreakMode="tailTruncation" minimumFontSize="10" id="WSr-1M-AVT">
-                                <rect key="frame" x="24" y="320" width="108" height="21"/>
+                                <rect key="frame" x="24" y="305" width="108" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="ZeS-hg-jIm">
-                                <rect key="frame" x="24" y="344" width="61" height="21"/>
+                                <rect key="frame" x="24" y="329" width="61" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Achievement.png" id="AlX-C7-Dn2">
-                                <rect key="frame" x="214" y="297" width="67" height="68"/>
+                                <rect key="frame" x="214" y="282" width="67" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -175,69 +262,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2T-cx-puL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Wrq-qR-EAR" customClass="ceChallengeStatusViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ID2-b9-uzh">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" progress="0.21830986440181732" id="Wpf-u8-rBC">
-                                <rect key="frame" x="20" y="282" width="280" height="9"/>
+                                <rect key="frame" x="20" y="218" width="280" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Challenge zu 20% erfüllt!" lineBreakMode="tailTruncation" minimumFontSize="10" id="NWD-Wl-odN">
-                                <rect key="frame" x="20" y="299" width="280" height="21"/>
+                                <rect key="frame" x="20" y="235" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Zürichseerundfahrt" lineBreakMode="tailTruncation" minimumFontSize="10" id="BIf-ZH-A6F">
-                                <rect key="frame" x="20" y="242" width="280" height="41"/>
+                                <rect key="frame" x="20" y="178" width="280" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Zeit:" lineBreakMode="tailTruncation" minimumFontSize="10" id="6M3-bQ-PPt">
-                                <rect key="frame" x="20" y="328" width="46" height="21"/>
+                                <rect key="frame" x="20" y="264" width="46" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="20min 30sec" lineBreakMode="tailTruncation" minimumFontSize="10" id="cTQ-q7-zI8">
-                                <rect key="frame" x="74" y="328" width="98" height="21"/>
+                                <rect key="frame" x="74" y="264" width="98" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="tvC-h6-lqO">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="234"/>
+                                <rect key="frame" x="0.0" y="-49" width="320" height="234"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Verbindung:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="qxh-cG-W6Q">
-                                <rect key="frame" x="165" y="359" width="97" height="21"/>
+                                <rect key="frame" x="165" y="295" width="97" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="greenled.png" id="LId-UZ-mtp">
-                                <rect key="frame" x="270" y="356" width="30" height="28"/>
+                                <rect key="frame" x="270" y="292" width="30" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="TIZ-Vz-MQe">
-                                <rect key="frame" x="116" y="388" width="184" height="21"/>
+                                <rect key="frame" x="107" y="324" width="184" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="j7F-VI-9Gl">
-                                <rect key="frame" x="35" y="382" width="79" height="27"/>
+                                <rect key="frame" x="20" y="324" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Map-Fokus:" lineBreakMode="tailTruncation" minimumFontSize="10" id="thC-R9-uTT">
-                                <rect key="frame" x="20" y="359" width="97" height="21"/>
+                                <rect key="frame" x="20" y="295" width="97" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -270,12 +357,31 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1264" y="-326"/>
+            <point key="canvasLocation" x="1254" y="-74"/>
+        </scene>
+        <scene sceneID="NhE-mG-9qs">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="inI-9R-0Fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController definesPresentationContext="YES" id="Kr0-H1-MN1" customClass="ceTabController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="M6Q-Xf-LrX">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Hz7-4Y-e5H" kind="relationship" relationship="viewControllers" id="BYZ-1Y-hyN"/>
+                        <segue destination="kqx-TQ-jzo" kind="relationship" relationship="viewControllers" id="954-lT-GO7"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-1047" y="28"/>
         </scene>
         <scene sceneID="V5q-uI-kbY">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yN-1u-Dug" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="Hz7-4Y-e5H" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="bjT-hC-b5A"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rYq-Gs-3rz">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -292,6 +398,15 @@
         <image name="greenled.png" width="32" height="32"/>
     </resources>
     <classes>
+        <class className="ChallengeAttemptCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChallengeAttemptCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="attemptStartTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="challengeCategorie" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="challengeImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="challengeTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="ChallengeCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ChallengeCell.h"/>
             <relationships>
@@ -334,10 +449,23 @@
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
+        <class className="ceRunningChallengesController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ceRunningChallengesController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="runningChallengesTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ceTabController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ceTabController.h"/>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="8Tp-mJ-7cf"/>
+        <segue reference="VOs-3v-vjQ"/>
+    </inferredMetricsTieBreakers>
 </document>

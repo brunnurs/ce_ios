@@ -13,6 +13,9 @@
 #import "ChallengeAttempt.h"
 #import "LocationRKCallbackHandler.h"
 #import "ceAppDelegate.h"
+#import "SendingStrategyFactory.h"
+#import "SendingStrategy.h"
+
 #include <stdlib.h>
 
 
@@ -22,29 +25,38 @@
 @synthesize callbackHandler;
 @synthesize currentChallengeAttempt;
 @synthesize isInBackgroundMode;
+@synthesize sendingStrategyFactory;
 
-- (id)initWithChallenge:(Challenge *)chall
+- (id)init
 {
 	self = [super init];
 	if(!self)
 		return nil;
     
+    self.sendingStrategyFactory = [[SendingStrategyFactory alloc]init];
     self.callbackHandler = [[LocationRKCallbackHandler alloc] initWithTrackingController:self];
     self.callbackHandler.askForProgressAfterActivitySent = YES;
     self.locationManager = [[CLLocationManager alloc] init];
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.delegate = self;
-    locationManager.distanceFilter = 10.0f;
+    locationManager.distanceFilter = 50.0f;
     
     self.isInBackgroundMode = false;
-    
-    self.currentChallengeAttempt = [[ChallengeAttempt alloc]initWithNewHashAndChallenge:chall];
-    
-    //register myself on the app-delegate to detect background mode
-    ceAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    delegate.trackingController = self;
-    
+
 	return self;
+}
+
+-(void)initializeNewChallengeAttemptWithChallenge:(Challenge*)challenge
+{
+    ChallengeAttempt *newChallengeAttempt = [ChallengeAttempt object];
+    [newChallengeAttempt initializeNewHashWithChallenge:challenge];
+    self.currentChallengeAttempt = newChallengeAttempt;
+}
+
+-(void)initializeChallengeAttempt:(ChallengeAttempt*)challengeAttempt
+{
+    self.currentChallengeAttempt = challengeAttempt;
+
 }
 
 -(void)setChallengeView:(id <TrackingControllerDelegate>)challengeView
@@ -79,30 +91,25 @@
 	locationManager.distanceFilter = distance;
 }
 
--(void)askSpontaneousForProgress
+-(BOOL)askSpontaneousForProgress
 {
-    [callbackHandler askForCurrentProgress];
+    if(self.currentChallengeAttempt != nil)
+    {
+        [callbackHandler askForCurrentProgress];
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 
 -(void)handlePositionUpdate:(CLLocation*)newLocation
 {
-    ActivityData *newActivity = [self createNewActivityData:newLocation];
-    
-//    int r = (arc4random() % 3) + 2;
-//    NSLog(@"r is: %d",r);
-//    if(r == 3)
-    if([[RKClient sharedClient].reachabilityObserver isNetworkReachable])
-    {
-        [self postCachedAndTheNewActivityToServer];
-        [callbackHandler.challengeView positionUpdateWithConnectivity:true];
-    }
-    else
-    {
-        [self saveToDatabase:newActivity];
-        [callbackHandler.challengeView positionUpdateWithConnectivity:false];
-    }
+    id<SendingStrategy> sendingStrategy = [sendingStrategyFactory getSendingStrategyByBackgroundForeground:isInBackgroundMode withCallbackHandler:callbackHandler];
 
+    [sendingStrategy sendToServer:newLocation forChallengeAttempt:currentChallengeAttempt];
 }
 
 -(void)removeOldActivityDataFromDatabase
@@ -227,8 +234,8 @@
 -(void)removeCurrentChallengeAttempt
 {
     NSError* error;
-    [currentChallengeAttempt.attemptHash.managedObjectContext deleteObject:currentChallengeAttempt.attemptHash];
-    bool hasSaved = [currentChallengeAttempt.attemptHash.managedObjectContext save:&error];
+    [currentChallengeAttempt.managedObjectContext deleteObject:currentChallengeAttempt];
+    bool hasSaved = [currentChallengeAttempt.managedObjectContext save:&error];
     NSLog(@"Removed curentChallengeAttempt with AttemptHash. Save worked? (%@)",(hasSaved) ? @"YES" : @"NO");
     
     self.currentChallengeAttempt = nil;

@@ -62,7 +62,7 @@
 	difficultyLabel.text = diffLabel;
 }
 
-// *************** switch to the Detail-View ******************
+// *************** switch to Status-View ******************
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Make sure we're referring to the correct segue
@@ -70,7 +70,10 @@
         
         // Get reference to the destination view controller
         ceChallengeStatusViewController *statusView = [segue destinationViewController];
-        LocationTrackingController *trackingController = [[LocationTrackingController alloc]initWithChallenge:detailChallenge];
+        
+        ceAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+        LocationTrackingController *trackingController = delegate.trackingController;
+        [trackingController initializeNewChallengeAttemptWithChallenge:detailChallenge];
 
         statusView.trackingController = trackingController;
     }

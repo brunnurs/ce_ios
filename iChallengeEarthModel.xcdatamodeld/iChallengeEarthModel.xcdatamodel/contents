@@ -17,8 +17,13 @@
         <attribute name="challengeId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="activityDatas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActivityData" inverseName="attemptHashs" inverseEntity="ActivityData"/>
     </entity>
+    <entity name="ChallengeAttempt" representedClassName="ChallengeAttempt" syncable="YES">
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="attemptHash" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="AttemptHash" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="ActivityData" positionX="-236" positionY="-189" width="128" height="195"/>
-        <element name="AttemptHash" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="ActivityData" positionX="-236" positionY="-186" width="128" height="195"/>
+        <element name="AttemptHash" positionX="205" positionY="-81" width="128" height="90"/>
+        <element name="ChallengeAttempt" positionX="63" positionY="-192" width="128" height="75"/>
     </elements>
 </model>
