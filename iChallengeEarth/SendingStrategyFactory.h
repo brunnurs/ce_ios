@@ -20,6 +20,6 @@
 @property (strong,nonatomic) BackgroundSendingStrategy *backgroundStrategy;
 @property (strong,nonatomic) ForegroundSendingStrategy *foregroundStrategy;
 
--(id<SendingStrategy>)getSendingStrategyByBackgroundForeground:(bool)isForeground withCallbackHandler:(LocationRKCallbackHandler*)callbackHandler;
+-(SendingStrategy*)getSendingStrategyByBackgroundForeground:(bool)isForeground withCallbackHandler:(LocationRKCallbackHandler*)callbackHandler;
 
 @end

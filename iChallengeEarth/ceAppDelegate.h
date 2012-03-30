@@ -10,15 +10,18 @@
 
 
 //Basic-URL for the REST-Interface
-//static NSString *BASEURL_REST = @"http://192.168.135.137:8080/com.challengeEarth_ChallengeEarth_war_1.0-SNAPSHOT/rest";
-//static NSString *BASEURL = @"http://192.168.135.137:8080/com.challengeEarth_ChallengeEarth_war_1.0-SNAPSHOT";
-//
-//static long USERID = 1;
-//
-static NSString *BASEURL_REST = @"http://ec2-46-137-18-40.eu-west-1.compute.amazonaws.com/ChallengeEarth-1.0-SNAPSHOT/rest";
-static NSString *BASEURL = @"http://ec2-46-137-18-40.eu-west-1.compute.amazonaws.com/ChallengeEarth-1.0-SNAPSHOT";
+static NSString *BASEURL_REST = @"http://192.168.135.137:8080/com.challengeEarth_ChallengeEarth_war_1.0-SNAPSHOT/rest";
+static NSString *BASEURL = @"http://192.168.135.137:8080/com.challengeEarth_ChallengeEarth_war_1.0-SNAPSHOT";
 
-static long USERID = 10458;
+static long USERID = 1;
+//
+//static NSString *BASEURL_REST = @"http://ec2-46-137-18-40.eu-west-1.compute.amazonaws.com/ChallengeEarth-1.0-SNAPSHOT/rest";
+//static NSString *BASEURL = @"http://ec2-46-137-18-40.eu-west-1.compute.amazonaws.com/ChallengeEarth-1.0-SNAPSHOT";
+//
+//static long USERID = 10458;  //Ursin
+//static long USERID = 21036;  //Dean
+//static long USERID = 21033;  //Uch
+//static long USERID = 1203;  //Hansrueadi
 
 @class LocationTrackingController;
 

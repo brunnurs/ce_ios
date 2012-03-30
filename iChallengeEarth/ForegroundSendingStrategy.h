@@ -12,15 +12,7 @@
 @class LocationRKCallbackHandler;
 @class ActivityData;
 
-@interface ForegroundSendingStrategy : NSObject <SendingStrategy>
+@interface ForegroundSendingStrategy : SendingStrategy
 
-@property (strong,nonatomic) LocationRKCallbackHandler *callbackHandler;
-
-//private methods
--(void)postActivityDataAsynchronousToServer:(ActivityData *)activityData;
--(bool)shouldWeAskForProgress:(int)currentIndex whenActivityDataCount:(int)activityDataCount;
--(ActivityData*)createNewActivityData:(CLLocation*)newLocation withChallengeAttempt:(ChallengeAttempt*)currentChallengeAttempt;
--(void)postCachedAndTheNewActivityToServer;
--(void)saveToDatabase:(ActivityData *)activityData;
 
 @end

@@ -28,6 +28,8 @@
 		C3481B8914A7C34E000552F5 /* ceOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3481B8614A7C34E000552F5 /* ceOverviewController.m */; };
 		C34D07B41516641D004723B8 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C34D07AA151663AE004723B8 /* libRestKit.a */; };
 		C351095414ED31480029F594 /* LocationRKCallbackHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C351095314ED31480029F594 /* LocationRKCallbackHandler.m */; };
+		C360574D1523AE1D00E70FF5 /* SendingStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = C360574C1523AE1D00E70FF5 /* SendingStrategy.m */; };
+		C360574E1523AE1D00E70FF5 /* SendingStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = C360574C1523AE1D00E70FF5 /* SendingStrategy.m */; };
 		C36DF3AC14AE0A5C006ED1F7 /* AdressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C36DF3AB14AE0A5C006ED1F7 /* AdressAnnotation.m */; };
 		C36DF3AD14AE0A5C006ED1F7 /* AdressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C36DF3AB14AE0A5C006ED1F7 /* AdressAnnotation.m */; };
 		C36DF3B114AE0AFA006ED1F7 /* Position.m in Sources */ = {isa = PBXBuildFile; fileRef = C36DF3B014AE0AFA006ED1F7 /* Position.m */; };
@@ -168,6 +170,7 @@
 		C34D079E151663AD004723B8 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		C351095214ED31480029F594 /* LocationRKCallbackHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationRKCallbackHandler.h; sourceTree = "<group>"; };
 		C351095314ED31480029F594 /* LocationRKCallbackHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationRKCallbackHandler.m; sourceTree = "<group>"; };
+		C360574C1523AE1D00E70FF5 /* SendingStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendingStrategy.m; sourceTree = "<group>"; };
 		C36DF3AA14AE0A5C006ED1F7 /* AdressAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdressAnnotation.h; sourceTree = "<group>"; };
 		C36DF3AB14AE0A5C006ED1F7 /* AdressAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdressAnnotation.m; sourceTree = "<group>"; };
 		C36DF3AF14AE0AFA006ED1F7 /* Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Position.h; sourceTree = "<group>"; };
@@ -285,9 +288,10 @@
 				C3E70837151A607D00586D99 /* BackgroundSendingStrategy.m */,
 				C3E7083A151A609C00586D99 /* ForegroundSendingStrategy.h */,
 				C3E7083B151A609C00586D99 /* ForegroundSendingStrategy.m */,
-				C3E7083E151A60AD00586D99 /* SendingStrategy.h */,
 				C3E70840151A622000586D99 /* SendingStrategyFactory.h */,
 				C3E70841151A622000586D99 /* SendingStrategyFactory.m */,
+				C3E7083E151A60AD00586D99 /* SendingStrategy.h */,
+				C360574C1523AE1D00E70FF5 /* SendingStrategy.m */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -695,6 +699,7 @@
 				C3E7083C151A609D00586D99 /* ForegroundSendingStrategy.m in Sources */,
 				C3E70842151A622000586D99 /* SendingStrategyFactory.m in Sources */,
 				C3E7084A151CD00900586D99 /* ceTabController.m in Sources */,
+				C360574D1523AE1D00E70FF5 /* SendingStrategy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +731,7 @@
 				C3E7083D151A609D00586D99 /* ForegroundSendingStrategy.m in Sources */,
 				C3E70843151A622000586D99 /* SendingStrategyFactory.m in Sources */,
 				C3E7084B151CD00900586D99 /* ceTabController.m in Sources */,
+				C360574E1523AE1D00E70FF5 /* SendingStrategy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

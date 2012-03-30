@@ -36,10 +36,10 @@
 
 -(long)getElapsedTime
 {
-	if(startDate > 0)
+	if(self.startDate > 0)  
 	{
 		NSDate *now = [NSDate date];
-		return [now timeIntervalSince1970] - [startDate timeIntervalSince1970];
+		return [now timeIntervalSince1970] - [self.startDate timeIntervalSince1970];
 	}
 	else 
 		return -1;

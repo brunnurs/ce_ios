@@ -13,7 +13,7 @@
 @class ActivityData;
 @class ChallengeAttempt;
 
-@interface BackgroundSendingStrategy : NSObject <SendingStrategy>
+@interface BackgroundSendingStrategy : SendingStrategy
 
 
 
