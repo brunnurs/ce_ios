@@ -71,7 +71,7 @@
     {
         //we remove activityData only if they are older than 1min to avoid problems with the RequestQueue.
         long long timeDiff = currentTimeAsNumber.longLongValue - activity.dateTime.longLongValue;
-        NSLog(@"Timedifference is: %lld",timeDiff);
+        NSLog(@"Timedifference is: %lld, longitude: %@",timeDiff,activity.longitude);
         if(timeDiff > 1000)
         {
             [activity.managedObjectContext deleteObject:activity];

@@ -91,6 +91,16 @@
 	locationManager.distanceFilter = distance;
 }
 
+-(void)removeCurrentChallengeAttempt
+{
+    NSError* error;
+    [currentChallengeAttempt.managedObjectContext deleteObject:currentChallengeAttempt];
+    bool hasSaved = [currentChallengeAttempt.managedObjectContext save:&error];
+    NSLog(@"Removed curentChallengeAttempt with AttemptHash. Save worked? (%@)",(hasSaved) ? @"YES" : @"NO");
+    
+    self.currentChallengeAttempt = nil;
+}
+
 -(BOOL)askSpontaneousForProgress
 {
     if(self.currentChallengeAttempt != nil)

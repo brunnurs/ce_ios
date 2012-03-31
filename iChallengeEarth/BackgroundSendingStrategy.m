@@ -18,14 +18,26 @@
 
 -(void)postActivityDataToServer:(ActivityData*)activityData
 {
-    RKObjectLoader* loader = [[RKObjectManager sharedManager] objectLoaderForObject:activityData method:RKRequestMethodPOST delegate:callbackHandler];
+    RKObjectLoader* loader = [[RKObjectManager sharedManager] objectLoaderForObject:activityData method:RKRequestMethodPOST delegate:nil];
     loader.targetObject = activityData;
     loader.objectMapping = [ActivityData getMappingForREST];
     [loader sendSynchronously]; 
-    
     NSLog(@"Sended ActivityData synchron to server: %@.",activityData);
-
+    
+    
+    //It's necessery to remove the data instantly, because otherwise we get in trouble with the different threads we start for every Server-call
+    [self removeActivityDataFromDB:activityData];
 }
+
+-(void)removeActivityDataFromDB:(ActivityData*)toRemove
+{
+    [toRemove.managedObjectContext deleteObject:toRemove];
+    NSError* error;
+    [toRemove.managedObjectContext save:&error];
+    NSLog(@"Instantly removed the ActivityData \nerror:%@ | %@ | %@", error, [error userInfo],[error localizedDescription]);
+    
+}
+
 
 -(bool)isBackgroundStrategy
 {
