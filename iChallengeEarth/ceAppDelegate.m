@@ -89,6 +89,10 @@
     if(self.trackingController != nil)
     {
         self.trackingController.isInBackgroundMode = false;
+        
+        //reload CoreData-objects because we are now in another thread
+        [trackingController reloadCurrentChallengeAttempt];
+        
         if([trackingController askSpontaneousForProgress])
         {
             NSLog(@"Change to foreground-mode and notify LocationTrackingController. Ask spontaneous for current Progress");

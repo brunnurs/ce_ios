@@ -93,6 +93,8 @@
 		C3F1AD5214A7C671005A1701 /* Challenge.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F1AD4E14A7C671005A1701 /* Challenge.m */; };
 		C3F1AD5314A7C671005A1701 /* ChallengeList.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F1AD5014A7C671005A1701 /* ChallengeList.m */; };
 		C3F1AD5414A7C671005A1701 /* ChallengeList.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F1AD5014A7C671005A1701 /* ChallengeList.m */; };
+		C3F4D9F61528F6DD009BFBE4 /* NSManagedObjectLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F4D9F51528F6DD009BFBE4 /* NSManagedObjectLogger.m */; };
+		C3F4D9F71528F6DD009BFBE4 /* NSManagedObjectLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F4D9F51528F6DD009BFBE4 /* NSManagedObjectLogger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +242,8 @@
 		C3F1AD4E14A7C671005A1701 /* Challenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Challenge.m; sourceTree = "<group>"; };
 		C3F1AD4F14A7C671005A1701 /* ChallengeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeList.h; sourceTree = "<group>"; };
 		C3F1AD5014A7C671005A1701 /* ChallengeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeList.m; sourceTree = "<group>"; };
+		C3F4D9F41528F6DD009BFBE4 /* NSManagedObjectLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSManagedObjectLogger.h; sourceTree = "<group>"; };
+		C3F4D9F51528F6DD009BFBE4 /* NSManagedObjectLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSManagedObjectLogger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -415,6 +419,7 @@
 		C370FD2714A7AAFC00E64D41 /* iChallengeEarth */ = {
 			isa = PBXGroup;
 			children = (
+				C3F4D9F31528F6A4009BFBE4 /* Logging */,
 				C31C14741518AD0500C7B9AC /* SpecialController */,
 				C31A744F14E83522009219A6 /* Database */,
 				C306D56A14BB5EEA009CB341 /* Location */,
@@ -505,6 +510,15 @@
 				C31C14821518FB3A00C7B9AC /* ChallengeAttemptCell.m */,
 			);
 			name = GUIComponents;
+			sourceTree = "<group>";
+		};
+		C3F4D9F31528F6A4009BFBE4 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				C3F4D9F41528F6DD009BFBE4 /* NSManagedObjectLogger.h */,
+				C3F4D9F51528F6DD009BFBE4 /* NSManagedObjectLogger.m */,
+			);
+			name = Logging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -700,6 +714,7 @@
 				C3E70842151A622000586D99 /* SendingStrategyFactory.m in Sources */,
 				C3E7084A151CD00900586D99 /* ceTabController.m in Sources */,
 				C360574D1523AE1D00E70FF5 /* SendingStrategy.m in Sources */,
+				C3F4D9F61528F6DD009BFBE4 /* NSManagedObjectLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +747,7 @@
 				C3E70843151A622000586D99 /* SendingStrategyFactory.m in Sources */,
 				C3E7084B151CD00900586D99 /* ceTabController.m in Sources */,
 				C360574E1523AE1D00E70FF5 /* SendingStrategy.m in Sources */,
+				C3F4D9F71528F6DD009BFBE4 /* NSManagedObjectLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

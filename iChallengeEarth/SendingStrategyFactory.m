@@ -26,16 +26,16 @@
 	return self;
 }
 
--(SendingStrategy*)getSendingStrategyByBackgroundForeground:(bool)isInBackground withCallbackHandler:(LocationRKCallbackHandler*)callbackHandler
+-(SendingStrategy*)getSendingStrategyByBackgroundForeground:(bool)isInBackground withLocationTrackingController:(LocationTrackingController*)locationTrackingController
 {
     if(isInBackground)
     {
-        backgroundStrategy.callbackHandler = callbackHandler;
+        backgroundStrategy.locationTrackingController = locationTrackingController;
         return backgroundStrategy;
     }
     else
     {
-        foregroundStrategy.callbackHandler = callbackHandler;
+        foregroundStrategy.locationTrackingController = locationTrackingController;
         return foregroundStrategy;
     }
     

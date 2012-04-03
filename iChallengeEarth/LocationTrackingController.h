@@ -46,5 +46,9 @@
 -(void)removeCurrentChallengeAttempt;
 -(BOOL)askSpontaneousForProgress;
 
+//private
+
+-(void)reloadCurrentChallengeAttempt;
+
 
 @end

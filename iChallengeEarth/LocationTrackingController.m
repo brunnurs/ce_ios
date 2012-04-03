@@ -39,7 +39,7 @@
     self.locationManager = [[CLLocationManager alloc] init];
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.delegate = self;
-    locationManager.distanceFilter = 50.0f;
+    locationManager.distanceFilter = 100.0f;
     
     self.isInBackgroundMode = false;
 
@@ -117,10 +117,24 @@
 
 -(void)handlePositionUpdate:(CLLocation*)newLocation
 {
-    SendingStrategy* sendingStrategy = [sendingStrategyFactory getSendingStrategyByBackgroundForeground:isInBackgroundMode withCallbackHandler:callbackHandler];
+    SendingStrategy* sendingStrategy = [sendingStrategyFactory getSendingStrategyByBackgroundForeground:isInBackgroundMode withLocationTrackingController:self];
 
-    [sendingStrategy sendToServer:newLocation forChallengeAttempt:currentChallengeAttempt];
+    [sendingStrategy sendToServer:newLocation];
 }
+
+
+-(void)reloadCurrentChallengeAttempt
+{
+    if(self.currentChallengeAttempt != NULL)
+    {
+        NSManagedObjectContext *contextForCurrThread = [RKObjectManager sharedManager].objectStore.managedObjectContextForCurrentThread;
+        AttemptHash *reloadedAttemptHash = [AttemptHash findFirstByAttribute:@"attemptHash" withValue:currentChallengeAttempt.attemptHash.attemptHash inContext:contextForCurrThread];
+        self.currentChallengeAttempt = reloadedAttemptHash.challengeAttempt;
+        NSLog(@"Current Challenge %@ reloaded because of threading-issues",(self.currentChallengeAttempt != NULL) ? @"successfully" : @"NOT successfully!");
+
+    }
+}
+
 
 
 #pragma mark CLLocationManagerDelegate

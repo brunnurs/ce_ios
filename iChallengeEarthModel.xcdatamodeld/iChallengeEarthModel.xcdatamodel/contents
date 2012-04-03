@@ -24,7 +24,7 @@
     </entity>
     <elements>
         <element name="ActivityData" positionX="-236" positionY="-186" width="128" height="195"/>
-        <element name="AttemptHash" positionX="205" positionY="-81" width="128" height="90"/>
-        <element name="ChallengeAttempt" positionX="63" positionY="-192" width="128" height="75"/>
+        <element name="AttemptHash" positionX="196" positionY="-153" width="128" height="90"/>
+        <element name="ChallengeAttempt" positionX="556" positionY="-30" width="128" height="75"/>
     </elements>
 </model>
