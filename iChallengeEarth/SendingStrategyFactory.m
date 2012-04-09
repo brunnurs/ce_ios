@@ -7,6 +7,7 @@
 //
 
 #import "SendingStrategyFactory.h"
+#import "SendingStrategy.h"
 
 @implementation SendingStrategyFactory
 @synthesize backgroundStrategy;
@@ -25,15 +26,16 @@
 	return self;
 }
 
--(id<SendingStrategy>)getSendingStrategyByBackgroundForeground:(bool)isInBackground withCallbackHandler:(LocationRKCallbackHandler*)callbackHandler
+-(SendingStrategy*)getSendingStrategyByBackgroundForeground:(bool)isInBackground withLocationTrackingController:(LocationTrackingController*)locationTrackingController
 {
     if(isInBackground)
     {
+        backgroundStrategy.locationTrackingController = locationTrackingController;
         return backgroundStrategy;
     }
     else
     {
-        foregroundStrategy.callbackHandler = callbackHandler;
+        foregroundStrategy.locationTrackingController = locationTrackingController;
         return foregroundStrategy;
     }
     

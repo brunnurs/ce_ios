@@ -13,12 +13,11 @@
 @class ActivityData;
 @class ChallengeAttempt;
 
-@interface BackgroundSendingStrategy : NSObject <SendingStrategy>
+@interface BackgroundSendingStrategy : SendingStrategy
 
 
 
--(ActivityData *)createNewActivityData:(CLLocation*)newLocation withChallengeAttempt:(ChallengeAttempt*)currentChallengeAttempt;
--(void)postActivityDataSynchronousToServer:(ActivityData*)activityData;
+-(void)removeActivityDataFromDB:(ActivityData*)toRemove;
 
 
 @end

@@ -46,13 +46,9 @@
 -(void)removeCurrentChallengeAttempt;
 -(BOOL)askSpontaneousForProgress;
 
+//private
 
-//private methods
--(void)postActivityDataSynchronousToServer:(ActivityData *)activityData;
--(void)postActivityDataAsynchronousToServer:(ActivityData *)activityData;
--(bool)shouldWeAskForProgress:(int)currentIndex whenActivityDataCount:(int)activityDataCount;
--(ActivityData*)createNewActivityData:(CLLocation*)newLocation;
--(void)postCachedAndTheNewActivityToServer;
--(void)saveToDatabase:(ActivityData *)activityData;
+-(void)reloadCurrentChallengeAttempt;
+
 
 @end

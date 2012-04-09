@@ -14,9 +14,6 @@
 
 @interface ChallengeAttempt : NSManagedObject
 {
-    AttemptHash *attemptHash;
-    NSDate *startDate;
-    
     Challenge *challenge;
 }
 

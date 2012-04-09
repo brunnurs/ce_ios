@@ -10,11 +10,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvz-op-clS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="overview" id="VAp-u8-j1n" customClass="ceOverviewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ehh-PL-PgR">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="I95-Ce-Q5k">
-                                <rect key="frame" x="0.0" y="206" width="320" height="169"/>
+                                <rect key="frame" x="0.0" y="206" width="320" height="189"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -72,7 +72,7 @@
                                 </connections>
                             </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="Lev-jr-PRe">
-                                <rect key="frame" x="0.0" y="-49" width="320" height="256"/>
+                                <rect key="frame" x="0.0" y="-29" width="320" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                         </subviews>
@@ -86,6 +86,20 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="77" y="-358"/>
+        </scene>
+        <scene sceneID="XcX-ik-Ldt">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3YJ-fF-6tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="hoQ-Bv-MrC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qPk-AB-v6C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="431"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="tjn-zw-5GQ"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-415" y="1003"/>
         </scene>
         <scene sceneID="JK5-M8-8D6">
             <objects>
@@ -107,11 +121,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5TF-RI-1Pg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hn7-4E-1nD" customClass="ceRunningChallengesController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dRG-Xa-epy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" id="2vp-3v-7gD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="387"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -179,7 +193,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAQ-2w-yVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="details" id="PUv-pj-VUE" customClass="ceChallengeDetailController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Csj-aR-bB9">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Zürichseerundfahrt" lineBreakMode="tailTruncation" minimumFontSize="10" id="e52-8d-pnk">
@@ -262,7 +276,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2T-cx-puL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Wrq-qR-EAR" customClass="ceChallengeStatusViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ID2-b9-uzh">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="387"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" progress="0.21830986440181732" id="Wpf-u8-rBC">
@@ -298,7 +312,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="tvC-h6-lqO">
-                                <rect key="frame" x="0.0" y="-49" width="320" height="234"/>
+                                <rect key="frame" x="0.0" y="-29" width="320" height="234"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Verbindung:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="qxh-cG-W6Q">
@@ -372,6 +386,7 @@
                     <connections>
                         <segue destination="Hz7-4Y-e5H" kind="relationship" relationship="viewControllers" id="BYZ-1Y-hyN"/>
                         <segue destination="kqx-TQ-jzo" kind="relationship" relationship="viewControllers" id="954-lT-GO7"/>
+                        <segue destination="hoQ-Bv-MrC" kind="relationship" relationship="viewControllers" id="gQc-OK-oUh"/>
                     </connections>
                 </tabBarController>
             </objects>

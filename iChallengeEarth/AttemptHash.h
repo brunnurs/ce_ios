@@ -11,9 +11,12 @@
 #import <RestKit/RestKit.h>
 
 @class ActivityData;
+@class ChallengeAttempt;
 
 @interface AttemptHash : NSManagedObject
 
+
+@property (strong,nonatomic) ChallengeAttempt *challengeAttempt;
 @property (nonatomic, retain) NSString * attemptHash;
 @property (nonatomic, retain) NSNumber * challengeId;
 @property (nonatomic, retain) NSSet *activityDatas;

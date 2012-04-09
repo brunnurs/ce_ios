@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RunningChallengeAttemptHandler.h"
+#import "UIImageView+WebCache.h"
 
 @interface ceRunningChallengesController : UIViewController<UITableViewDataSource,RunningAttemptsHandlerDelegate>
 {

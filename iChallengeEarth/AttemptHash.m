@@ -11,6 +11,7 @@
 
 @implementation AttemptHash
 
+@dynamic challengeAttempt;
 @dynamic attemptHash;
 @dynamic challengeId;
 @dynamic activityDatas;

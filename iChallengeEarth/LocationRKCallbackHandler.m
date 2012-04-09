@@ -75,12 +75,21 @@
 // ************************ just some logging-shit *************************
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
+    
+    
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Rats!" otherButtonTitles:nil];
     [alert show];
 }
 
 - (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response 
-{  
+{
+    if([response statusCode] > 400)
+    {
+        NSLog(@"gesendet: %@",[request HTTPBodyString]);
+        NSLog(@"empfangen: %@",[response bodyAsString]);
+
+    }
+    
 //    NSLog(@"gesendet: %@",[request HTTPBodyString]);
 //    for (NSString* key in [request additionalHTTPHeaders]) {
 //        NSLog(@"Header: %@",[request.additionalHTTPHeaders objectForKey:key]);

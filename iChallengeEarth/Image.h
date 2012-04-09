@@ -22,7 +22,9 @@
 @property (nonatomic,strong) UIImage *realImage;
 
 +(RKObjectMapping*)getMappingForREST;
+-(NSURL*)getURLToRemoteImage;
 
+//deprecated
 -(void)loadImage;
 
 @end
