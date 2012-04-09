@@ -179,7 +179,7 @@
     [self refreshPositionOnMap:nil];
     self.challenges = [[ChallengeList alloc]init];
     self.challenges.items = objects;
-    [self.challenges loadChallengeImages];
+//    [self.challenges loadChallengeImages];
     [self showChallengesAsPins];
     [challengeTable reloadData];
 }
@@ -267,8 +267,12 @@
 			break;
 	}
 	
-    cell.challengeImage.image = actChallenge.achievmentDesc.image.realImage;
-	cell.challengeDifficulty.image = [UIImage imageWithContentsOfFile:pathLED];
+    
+    [cell.challengeImage setImageWithURL:[actChallenge.achievmentDesc.image getURLToRemoteImage]
+                   placeholderImage:[UIImage imageNamed:@"noImageCell.png"]];
+
+    
+    cell.challengeDifficulty.image = [UIImage imageWithContentsOfFile:pathLED];
 	cell.challengeTitle.text = actChallenge.title;
 	cell.challengeCategorie.text = actChallenge.category.title;
     

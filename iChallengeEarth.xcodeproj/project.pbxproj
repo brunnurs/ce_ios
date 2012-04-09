@@ -24,6 +24,8 @@
 		C31C147C1518C11100C7B9AC /* ceRunningChallengesController.m in Sources */ = {isa = PBXBuildFile; fileRef = C31C147A1518C11100C7B9AC /* ceRunningChallengesController.m */; };
 		C31C14831518FB3A00C7B9AC /* ChallengeAttemptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31C14821518FB3A00C7B9AC /* ChallengeAttemptCell.m */; };
 		C31C14841518FB3A00C7B9AC /* ChallengeAttemptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C31C14821518FB3A00C7B9AC /* ChallengeAttemptCell.m */; };
+		C31F92FC1531BEB000EF4E3A /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C31F92FB1531BEA600EF4E3A /* libSDWebImage.a */; };
+		C31F92FE1531C14600EF4E3A /* noImageCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C31F92FD1531C14600EF4E3A /* noImageCell.png */; };
 		C3481B8814A7C34E000552F5 /* ceOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3481B8614A7C34E000552F5 /* ceOverviewController.m */; };
 		C3481B8914A7C34E000552F5 /* ceOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3481B8614A7C34E000552F5 /* ceOverviewController.m */; };
 		C34D07B41516641D004723B8 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C34D07AA151663AE004723B8 /* libRestKit.a */; };
@@ -98,6 +100,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C31F92FA1531BEA600EF4E3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C31F92F61531BEA600EF4E3A /* SDWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53922D6F148C55820056699D;
+			remoteInfo = SDWebImage;
+		};
 		C34D07A9151663AE004723B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C34D079E151663AD004723B8 /* RestKit.xcodeproj */;
@@ -167,6 +176,8 @@
 		C31C147A1518C11100C7B9AC /* ceRunningChallengesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ceRunningChallengesController.m; sourceTree = "<group>"; };
 		C31C14811518FB3A00C7B9AC /* ChallengeAttemptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeAttemptCell.h; sourceTree = "<group>"; };
 		C31C14821518FB3A00C7B9AC /* ChallengeAttemptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeAttemptCell.m; sourceTree = "<group>"; };
+		C31F92F61531BEA600EF4E3A /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDWebImage.xcodeproj; path = iChallengeEarth.xcodeproj/../SDWebImage/SDWebImage.xcodeproj; sourceTree = "<group>"; };
+		C31F92FD1531C14600EF4E3A /* noImageCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noImageCell.png; path = iChallengeEarth/noImageCell.png; sourceTree = "<group>"; };
 		C3481B8514A7C34E000552F5 /* ceOverviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ceOverviewController.h; sourceTree = "<group>"; };
 		C3481B8614A7C34E000552F5 /* ceOverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ceOverviewController.m; sourceTree = "<group>"; };
 		C34D079E151663AD004723B8 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
@@ -251,6 +262,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C31F92FC1531BEB000EF4E3A /* libSDWebImage.a in Frameworks */,
 				C34D07B41516641D004723B8 /* libRestKit.a in Frameworks */,
 				C3C3DEC7151613EA00FDBC9E /* QuartzCore.framework in Frameworks */,
 				C306D58414BB6025009CB341 /* CoreLocation.framework in Frameworks */,
@@ -317,6 +329,14 @@
 			name = SpecialController;
 			sourceTree = "<group>";
 		};
+		C31F92F71531BEA600EF4E3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C31F92FB1531BEA600EF4E3A /* libSDWebImage.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C3481B7D14A7C123000552F5 /* GUIController */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,7 +396,9 @@
 		C370FD1214A7AAFC00E64D41 = {
 			isa = PBXGroup;
 			children = (
+				C31F92F61531BEA600EF4E3A /* SDWebImage.xcodeproj */,
 				C3E70846151CC72500586D99 /* icon_iphone_57px.png */,
+				C31F92FD1531C14600EF4E3A /* noImageCell.png */,
 				C3E70844151CC71100586D99 /* Default.png */,
 				C34D079E151663AD004723B8 /* RestKit.xcodeproj */,
 				C3C3DEC6151613EA00FDBC9E /* QuartzCore.framework */,
@@ -584,6 +606,10 @@
 					ProductGroup = C34D079F151663AD004723B8 /* Products */;
 					ProjectRef = C34D079E151663AD004723B8 /* RestKit.xcodeproj */;
 				},
+				{
+					ProductGroup = C31F92F71531BEA600EF4E3A /* Products */;
+					ProjectRef = C31F92F61531BEA600EF4E3A /* SDWebImage.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -594,6 +620,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		C31F92FB1531BEA600EF4E3A /* libSDWebImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDWebImage.a;
+			remoteRef = C31F92FA1531BEA600EF4E3A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		C34D07AA151663AE004723B8 /* libRestKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -647,6 +680,7 @@
 				C3E70847151CC72500586D99 /* icon_iphone_57px.png in Resources */,
 				C3E70865151CD9AF00586D99 /* star.png in Resources */,
 				C3E70868151CDA2000586D99 /* graph.png in Resources */,
+				C31F92FE1531C14600EF4E3A /* noImageCell.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,6 +892,7 @@
 				INFOPLIST_FILE = "iChallengeEarth/iChallengeEarth-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -871,6 +906,7 @@
 				INFOPLIST_FILE = "iChallengeEarth/iChallengeEarth-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

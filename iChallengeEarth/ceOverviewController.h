@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "ChallengeList.h"
 #import <RestKit/RestKit.h>
+#import "UIImageView+WebCache.h"
 
 @interface ceOverviewController : UIViewController<UITableViewDataSource,RKObjectLoaderDelegate,RKRequestDelegate>{
     ChallengeList *challenges;

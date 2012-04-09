@@ -67,7 +67,10 @@
     Challenge *currentChallenge = challengeAttempt.challenge;
 	
 	ChallengeAttemptCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChallengeAttemptCell"];
-	
+
+    [cell.challengeImage setImageWithURL:[currentChallenge.achievmentDesc.image getURLToRemoteImage]
+                        placeholderImage:[UIImage imageNamed:@"noImageCell.png"]];
+    
     cell.challengeImage.image = currentChallenge.achievmentDesc.image.realImage;
 	cell.attemptStartTime.text = [self.dateFormatter stringFromDate:challengeAttempt.startDate];
 	cell.challengeTitle.text = currentChallenge.title;

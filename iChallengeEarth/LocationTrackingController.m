@@ -39,7 +39,7 @@
     self.locationManager = [[CLLocationManager alloc] init];
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.delegate = self;
-    locationManager.distanceFilter = 100.0f;
+    locationManager.distanceFilter = 80.0f;
     
     self.isInBackgroundMode = false;
 
@@ -130,7 +130,7 @@
         NSManagedObjectContext *contextForCurrThread = [RKObjectManager sharedManager].objectStore.managedObjectContextForCurrentThread;
         AttemptHash *reloadedAttemptHash = [AttemptHash findFirstByAttribute:@"attemptHash" withValue:currentChallengeAttempt.attemptHash.attemptHash inContext:contextForCurrThread];
         self.currentChallengeAttempt = reloadedAttemptHash.challengeAttempt;
-        NSLog(@"Current Challenge %@ reloaded because of threading-issues",(self.currentChallengeAttempt != NULL) ? @"successfully" : @"NOT successfully!");
+        NSLog(@"Current Challenge %@ (attemptHash=%@) reloaded because of threading-issues",(self.currentChallengeAttempt != NULL) ? @"successfully" : @"NOT successfully!",currentChallengeAttempt.attemptHash.attemptHash);
 
     }
 }

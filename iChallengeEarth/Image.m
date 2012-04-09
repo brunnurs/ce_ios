@@ -22,6 +22,15 @@
 	return imageMapping;
 }
 
+-(NSURL*)getURLToRemoteImage
+{
+    NSLog(@"%@/%@/%@", BASEURL, filePath, fileName);
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@/%@", BASEURL, filePath, fileName]];
+
+    return url;
+}
+
+
 -(void)loadImage{
     NSLog(@"%@/%@/%@", BASEURL, filePath, fileName);
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@/%@", BASEURL, filePath, fileName]];
