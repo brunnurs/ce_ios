@@ -22,9 +22,14 @@
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="attemptHash" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="AttemptHash" inverseName="challengeAttempt" inverseEntity="AttemptHash" syncable="YES"/>
     </entity>
+    <entity name="UserPreferences" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="ActivityData" positionX="-236" positionY="-186" width="128" height="195"/>
         <element name="AttemptHash" positionX="106" positionY="-171" width="128" height="105"/>
         <element name="ChallengeAttempt" positionX="448" positionY="-453" width="128" height="75"/>
+        <element name="UserPreferences" positionX="-144" positionY="-495" width="128" height="75"/>
     </elements>
 </model>

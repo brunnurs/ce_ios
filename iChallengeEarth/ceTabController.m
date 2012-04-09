@@ -19,6 +19,10 @@
     NSString* pathToImageFile2 = [[NSBundle mainBundle] pathForResource:@"graph" ofType:@"png"];
     UIImage *tabIcon2 = [UIImage imageWithContentsOfFile:pathToImageFile2];
 
+    NSString* pathToImageFile3 = [[NSBundle mainBundle] pathForResource:@"preferences" ofType:@"png"];
+    UIImage *tabIcon3 = [UIImage imageWithContentsOfFile:pathToImageFile3];
+
+    
     UITabBarItem *item1 = [self.tabBar.items objectAtIndex:0];
     [item1 setImage:tabIcon1];
     [item1 setTitle:@"new Challenges"];
@@ -26,6 +30,10 @@
     UITabBarItem *item2 = [self.tabBar.items objectAtIndex:1];
     [item2 setImage:tabIcon2];
     [item2 setTitle:@"running Challenges"];
+    
+    UITabBarItem *item3 = [self.tabBar.items objectAtIndex:2];
+    [item3 setImage:tabIcon3];
+    [item3 setTitle:@"Settings"];
 }
 
 @end

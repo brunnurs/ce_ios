@@ -49,6 +49,7 @@
 		C370FD4214A7AAFC00E64D41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C370FD2314A7AAFC00E64D41 /* Foundation.framework */; };
 		C370FD4A14A7AAFD00E64D41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C370FD4814A7AAFD00E64D41 /* InfoPlist.strings */; };
 		C370FD4D14A7AAFD00E64D41 /* iChallengeEarthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C370FD4C14A7AAFD00E64D41 /* iChallengeEarthTests.m */; };
+		C37698F915336443006951E4 /* preferences.png in Resources */ = {isa = PBXBuildFile; fileRef = C37698F815336443006951E4 /* preferences.png */; };
 		C38BC55114EC547A00D2A1A5 /* ActivityData.m in Sources */ = {isa = PBXBuildFile; fileRef = C38BC55014EC547A00D2A1A5 /* ActivityData.m */; };
 		C38BC55414EC547A00D2A1A5 /* AttemptHash.m in Sources */ = {isa = PBXBuildFile; fileRef = C38BC55314EC547A00D2A1A5 /* AttemptHash.m */; };
 		C39E11C614B1D6CD0034AB7C /* rkkeypath in Resources */ = {isa = PBXBuildFile; fileRef = C39E11C514B1D6CD0034AB7C /* rkkeypath */; };
@@ -177,7 +178,7 @@
 		C31C14811518FB3A00C7B9AC /* ChallengeAttemptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeAttemptCell.h; sourceTree = "<group>"; };
 		C31C14821518FB3A00C7B9AC /* ChallengeAttemptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeAttemptCell.m; sourceTree = "<group>"; };
 		C31F92F61531BEA600EF4E3A /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDWebImage.xcodeproj; path = iChallengeEarth.xcodeproj/../SDWebImage/SDWebImage.xcodeproj; sourceTree = "<group>"; };
-		C31F92FD1531C14600EF4E3A /* noImageCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noImageCell.png; path = iChallengeEarth/noImageCell.png; sourceTree = "<group>"; };
+		C31F92FD1531C14600EF4E3A /* noImageCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noImageCell.png; sourceTree = "<group>"; };
 		C3481B8514A7C34E000552F5 /* ceOverviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ceOverviewController.h; sourceTree = "<group>"; };
 		C3481B8614A7C34E000552F5 /* ceOverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ceOverviewController.m; sourceTree = "<group>"; };
 		C34D079E151663AD004723B8 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
@@ -207,6 +208,7 @@
 		C370FD4914A7AAFD00E64D41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C370FD4B14A7AAFD00E64D41 /* iChallengeEarthTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iChallengeEarthTests.h; sourceTree = "<group>"; };
 		C370FD4C14A7AAFD00E64D41 /* iChallengeEarthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iChallengeEarthTests.m; sourceTree = "<group>"; };
+		C37698F815336443006951E4 /* preferences.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = preferences.png; sourceTree = "<group>"; };
 		C38BC54F14EC547A00D2A1A5 /* ActivityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityData.h; sourceTree = "<group>"; };
 		C38BC55014EC547A00D2A1A5 /* ActivityData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityData.m; sourceTree = "<group>"; };
 		C38BC55214EC547A00D2A1A5 /* AttemptHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttemptHash.h; sourceTree = "<group>"; };
@@ -243,8 +245,8 @@
 		C3E7083E151A60AD00586D99 /* SendingStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendingStrategy.h; sourceTree = "<group>"; };
 		C3E70840151A622000586D99 /* SendingStrategyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendingStrategyFactory.h; sourceTree = "<group>"; };
 		C3E70841151A622000586D99 /* SendingStrategyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendingStrategyFactory.m; sourceTree = "<group>"; };
-		C3E70844151CC71100586D99 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		C3E70846151CC72500586D99 /* icon_iphone_57px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_iphone_57px.png; sourceTree = "<group>"; };
+		C3E70844151CC71100586D99 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		C3E70846151CC72500586D99 /* icon_iphone_57px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_iphone_57px.png; path = ../icon_iphone_57px.png; sourceTree = "<group>"; };
 		C3E70848151CD00900586D99 /* ceTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ceTabController.h; sourceTree = "<group>"; };
 		C3E70849151CD00900586D99 /* ceTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ceTabController.m; sourceTree = "<group>"; };
 		C3E70864151CD9AF00586D99 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
@@ -397,9 +399,6 @@
 			isa = PBXGroup;
 			children = (
 				C31F92F61531BEA600EF4E3A /* SDWebImage.xcodeproj */,
-				C3E70846151CC72500586D99 /* icon_iphone_57px.png */,
-				C31F92FD1531C14600EF4E3A /* noImageCell.png */,
-				C3E70844151CC71100586D99 /* Default.png */,
 				C34D079E151663AD004723B8 /* RestKit.xcodeproj */,
 				C3C3DEC6151613EA00FDBC9E /* QuartzCore.framework */,
 				C306D58314BB6025009CB341 /* CoreLocation.framework */,
@@ -502,6 +501,10 @@
 		C3C5939714A7BAD400B150D9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C37698F815336443006951E4 /* preferences.png */,
+				C3E70846151CC72500586D99 /* icon_iphone_57px.png */,
+				C31F92FD1531C14600EF4E3A /* noImageCell.png */,
+				C3E70844151CC71100586D99 /* Default.png */,
 				C3E70867151CDA2000586D99 /* graph.png */,
 				C3E70864151CD9AF00586D99 /* star.png */,
 				C3C5939914A7BB1C00B150D9 /* Achievement.png */,
@@ -681,6 +684,7 @@
 				C3E70865151CD9AF00586D99 /* star.png in Resources */,
 				C3E70868151CDA2000586D99 /* graph.png in Resources */,
 				C31F92FE1531C14600EF4E3A /* noImageCell.png in Resources */,
+				C37698F915336443006951E4 /* preferences.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,9 +894,10 @@
 				GCC_PREFIX_HEADER = "iChallengeEarth/iChallengeEarth-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_FILE = "iChallengeEarth/iChallengeEarth-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				USER_HEADER_SEARCH_PATHS = "SDWebImage/** $(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -904,9 +909,10 @@
 				GCC_PREFIX_HEADER = "iChallengeEarth/iChallengeEarth-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_FILE = "iChallengeEarth/iChallengeEarth-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				USER_HEADER_SEARCH_PATHS = "SDWebImage/** $(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
