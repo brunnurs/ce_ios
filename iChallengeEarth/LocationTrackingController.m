@@ -39,7 +39,7 @@
     self.locationManager = [[CLLocationManager alloc] init];
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.delegate = self;
-    locationManager.distanceFilter = 80.0f;
+    locationManager.distanceFilter = 50.0f;
     
     self.isInBackgroundMode = false;
 
